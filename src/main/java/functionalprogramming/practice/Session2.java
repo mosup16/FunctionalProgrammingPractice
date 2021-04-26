@@ -1,12 +1,9 @@
 package functionalprogramming.practice;
 
 import java.util.*;
-import java.util.function.Function;
 
 public class Session2 {
 
-
-    private static final Comparator<Integer> reverseSortStrategy = (i, j) -> -1 * Integer.compare(i, j);
 
     public static void main(String[] args) {
         var data = List.of(1, 3, 6, 7, 14, 9);
@@ -22,6 +19,7 @@ public class Session2 {
     }
 
     private static void executeFunctionalExample(List<Integer> data, int maxAllowed, int limit) {
+        Comparator<Integer> reverseSortStrategy = (i, j) -> -1 * Integer.compare(i, j);
         data.stream().map(i -> i + 1).map(i -> i * i)
                 .filter(i -> i > maxAllowed).sorted(reverseSortStrategy).limit(limit)
                 .map(i -> i - 10).forEach(System.out::println);
@@ -29,7 +27,7 @@ public class Session2 {
 
 
     private static void executeImperativeExample(List<Integer> data, int maxAllowed, int limit) {
-
+        Comparator<Integer> reverseSortStrategy = (i, j) -> -1 * Integer.compare(i, j);
         PriorityQueue<Integer> squaredNums = new PriorityQueue<>(reverseSortStrategy);
         for (int x : data) {
             x = square(addOne(x));
