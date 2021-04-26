@@ -11,10 +11,14 @@ public class Session2 {
     public static void main(String[] args) {
         var data = List.of(1, 3, 6, 7, 14, 9);
         System.out.println("#Functional");
+        long start = System.currentTimeMillis();
         executeFunctionalExample(data, 20, 2);
+        System.out.println(System.currentTimeMillis() - start + "ms");
 
         System.out.println("#Imperative");
+        start = System.currentTimeMillis();
         executeImperativeExample(data, 20, 2);
+        System.out.println(System.currentTimeMillis() - start + "ms");
     }
 
     private static void executeFunctionalExample(List<Integer> data, int maxAllowed, int limit) {
