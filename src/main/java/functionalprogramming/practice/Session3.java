@@ -60,7 +60,8 @@ public class Session3 {
     private static Function<ProductType, Supplier<ProductDiscountParams>> getDiscountParamsDeterminer() {
         return productType ->
                 productType.equals(ProductType.Food) ? getFoodProductParamDeterminer() :
-                        productType.equals(ProductType.Beverage) ? getBeverageProductParamDeterminer() : getRawProductParamDeterminer();
+                        productType.equals(ProductType.Beverage) ? getBeverageProductParamDeterminer()
+                                : getRawProductParamDeterminer();
     }
 
     private static Supplier<ProductDiscountParams> getRawProductParamDeterminer() {
